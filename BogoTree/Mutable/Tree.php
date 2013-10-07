@@ -26,13 +26,13 @@ class Tree extends \BogoTree\Tree
 	public function makeNode($data, $nodeId, $parentNodeId = null)
 	{
 		if ($parentNodeId === null) {
-			$node = new CBTreeNode($data);
+			$node = new \BogoTree\Mutable\Node($data);
 
 			$this->rootNodes[] = $node;
 		} else {
 			$parentNode = $this->nodes[$parentNodeId];
 
-			$node = new CBTreeNode($data, $parentNode);
+			$node = new \BogoTree\Mutable\Node($data, $parentNode);
 
 			$parentNode->addChild($node);
 		}
@@ -52,6 +52,8 @@ class Tree extends \BogoTree\Tree
 	{
 		if (isset($this->nodes[$nodeId])) {
 			return $this->nodes[$nodeId];
+		} else {
+			return null;
 		}
 	}
 

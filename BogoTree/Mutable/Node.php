@@ -16,13 +16,6 @@ class Node extends \BogoTree\Node
 	private $height;
 
 	/**
-	 * All child nodes.
-	 *
-	 * @var Node[]
-	 */
-	private $children = array();
-
-	/**
 	 * Wraps a piece of data in a tree node.
 	 *
 	 * @param mixed $data
