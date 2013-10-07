@@ -4,9 +4,9 @@
 
 require('bootstrap.php');
 
-use \bogo\tree;
+use \BogoTree;
 
-$generator = new \bogo\tree\Generator;
+$generator = new \BogoTree\Generator;
 
 $treeObjects = array(
 	'N1' => array(
@@ -33,7 +33,7 @@ $treeObjects = array(
 	'N2'
 );
 
-function feedGenerator(\bogo\tree\Generator $generator, $objects, $parentId)
+function feedGenerator(\BogoTree\Generator $generator, $objects, $parentId)
 {
 	foreach ($objects as $i=>$j) {
 
@@ -59,7 +59,7 @@ function feedGenerator(\bogo\tree\Generator $generator, $objects, $parentId)
 
 feedGenerator($generator, $treeObjects, null);
 
-$imTree = new \bogo\tree\immutable\Tree($generator);
+$imTree = new \BogoTree\Immutable\Tree($generator);
 $i = new RecursiveIteratorIterator($imTree, RecursiveIteratorIterator::SELF_FIRST);
 foreach ($i as $node) {
 	echo str_repeat("   ", $i->getDepth()).$node->getId()."\n";

@@ -1,13 +1,10 @@
 <?php
-/*
- */
-
-namespace bogo\tree;
+namespace BogoTree;
 
 /**
  * Description of Node
  *
- * @author drcypher
+ * @author Konstantinos Filios <konfilios@gmail.com>
  */
 class Node implements INodeset
 {
@@ -24,6 +21,12 @@ class Node implements INodeset
 	 * @var mixed
 	 */
 	protected $object;
+
+	/**
+	 *
+	 * @var Node
+	 */
+	protected $parent;
 
 	/**
 	 * Child nodes.
@@ -53,6 +56,27 @@ class Node implements INodeset
 	}
 
 	/**
+	 * Is this a leaf node?
+	 *
+	 * @return boolean
+	 */
+	public function isLeaf()
+	{
+		return !empty($this->children);
+	}
+
+	/**
+	 * Is this a root node?
+	 *
+	 * @return boolean
+	 */
+	public function isRoot()
+	{
+		return ($this->parentNode === null);
+	}
+
+	/**
+	 * Child nodes.
 	 *
 	 * @return NodeArray
 	 */

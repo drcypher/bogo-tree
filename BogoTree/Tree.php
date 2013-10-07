@@ -1,9 +1,11 @@
 <?php
-/*
+namespace BogoTree;
+
+/**
+ * Description of Tree
+ *
+ * @author Konstantinos Filios <konfilios@gmail.com>
  */
-
-namespace bogo\tree;
-
 class Tree implements INodeset
 {
 	/**

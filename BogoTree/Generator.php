@@ -2,12 +2,12 @@
 /*
  */
 
-namespace bogo\tree;
+namespace BogoTree;
 
 /**
  * Description of Generator
  *
- * @author drcypher
+ * @author Konstantinos Filios <konfilios@gmail.com>
  */
 class Generator
 {

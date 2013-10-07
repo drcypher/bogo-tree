@@ -2,11 +2,11 @@
 /*
  */
 
-namespace bogo\tree;
+namespace BogoTree;
 
 /**
  *
- * @author drcypher
+ * @author Konstantinos Filios <konfilios@gmail.com>
  */
 interface INodeset extends \RecursiveIterator
 {

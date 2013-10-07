@@ -1,7 +1,7 @@
 <?php
 // uncomment the following to define a path alias
 // Yii::setPathOfAlias('local','path/to/local-folder');
-Yii::setPathOfAlias('bogo', dirname(__FILE__).'/../bogo');
+Yii::setPathOfAlias('BogoTree', dirname(__FILE__).'/../BogoTree/');
 
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
@@ -16,7 +16,7 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
-		'bogo.*',
+		'BogoTree.*',
 	),
 
 	'modules'=>array(

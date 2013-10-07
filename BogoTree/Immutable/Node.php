@@ -1,25 +1,21 @@
 <?php
-/*
- */
-
-namespace bogo\tree\immutable;
+namespace BogoTree\Immutable;
 
 /**
  * Description of ImmutableNode
  *
- * @author drcypher
+ * @author Konstantinos Filios <konfilios@gmail.com>
  */
-class Node extends \bogo\tree\Node
+class Node extends \BogoTree\Node
 {
 	private $height;
-	private $parent;
 
-	public function __construct($object, $id, $generator, $height, $parent)
+	public function __construct($object, $id, $generator, $height, $parentNode)
 	{
 		parent::__construct($object, $id);
 
 		$this->height = $height;
-		$this->parent = $parent;
+		$this->parentNode = $parentNode;
 
 		foreach ($generator->getChildObjectsById($id) as $childId=>$childObject) {
 //			echo __LINE__.' '.$childObject."\n";

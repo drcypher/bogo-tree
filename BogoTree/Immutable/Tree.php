@@ -2,17 +2,17 @@
 /*
  */
 
-namespace bogo\tree\immutable;
+namespace BogoTree\Immutable;
 
 /**
  * Description of ImmutableTree
  *
- * @author drcypher
+ * @author Konstantinos Filios <konfilios@gmail.com>
  */
-class Tree extends \bogo\tree\Tree
+class Tree extends \BogoTree\Tree
 {
 
-	public function __construct(\bogo\tree\Generator $generator)
+	public function __construct(\BogoTree\Generator $generator)
 	{
 		parent::__construct();
 

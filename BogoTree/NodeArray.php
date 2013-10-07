@@ -4,12 +4,12 @@
  * and open the template in the editor.
  */
 
-namespace bogo\tree;
+namespace BogoTree;
 
 /**
  * Description of NodeArray
  *
- * @author drcypher
+ * @author Konstantinos Filios <konfilios@gmail.com>
  */
 class NodeArray extends \RecursiveArrayIterator implements INodeset
 {
