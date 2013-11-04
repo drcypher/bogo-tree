@@ -2,7 +2,7 @@
 namespace BogoTree;
 
 /**
- * Description of Tree
+ * Abstract Tree
  *
  * @author Konstantinos Filios <konfilios@gmail.com>
  */

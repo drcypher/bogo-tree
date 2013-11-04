@@ -2,7 +2,7 @@
 namespace BogoTree\Mutable;
 
 /**
- * Node.
+ * Mutable Node.
  *
  * @author Konstantinos Filios <konfilios@gmail.com>
  */
@@ -18,13 +18,23 @@ class Node extends \BogoTree\Node
 	/**
 	 * Wraps a piece of data in a tree node.
 	 *
-	 * @param mixed $data
-	 * @param Node $parentNode
+	 * @param mixed $object
+	 * @param mixed $nodeId
+	 * @param \BogoTree\Mutable\Node $parentNode
 	 */
-	public function __construct($data = null, $parentNode = null)
+	public function __construct($object, $nodeId, $parentNode = null)
 	{
-		$this->object = $data;
+		parent::__construct($object, $nodeId);
+		$this->setParentNode($parentNode);
+	}
 
+	/**
+	 * Set new parent node.
+	 *
+	 * @param \BogoTree\Mutable\Node $parentNode
+	 */
+	public function setParentNode($parentNode)
+	{
 		if ($parentNode === null) {
 			$this->height = 0;
 		} else {
@@ -41,15 +51,6 @@ class Node extends \BogoTree\Node
 	public function addChild($child)
 	{
 		$this->children[] = $child;
-	}
-
-	/**
-	 * 
-	 * @return Nodeset
-	 */
-	public function asNodeset()
-	{
-		return new Nodeset(array($this));
 	}
 
 	/**

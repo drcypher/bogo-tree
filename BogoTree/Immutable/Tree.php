@@ -1,11 +1,8 @@
 <?php
-/*
- */
-
 namespace BogoTree\Immutable;
 
 /**
- * Description of ImmutableTree
+ * Immutable Tree
  *
  * @author Konstantinos Filios <konfilios@gmail.com>
  */

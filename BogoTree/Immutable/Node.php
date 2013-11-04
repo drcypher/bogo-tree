@@ -2,7 +2,7 @@
 namespace BogoTree\Immutable;
 
 /**
- * Description of ImmutableNode
+ * Immutable Node.
  *
  * @author Konstantinos Filios <konfilios@gmail.com>
  */
@@ -10,16 +10,16 @@ class Node extends \BogoTree\Node
 {
 	private $height;
 
-	public function __construct($object, $id, $generator, $height, $parentNode)
+	public function __construct($object, $nodeId, $nodeGenerator, $height, $parentNode)
 	{
-		parent::__construct($object, $id);
+		parent::__construct($object, $nodeId);
 
 		$this->height = $height;
 		$this->parentNode = $parentNode;
 
-		foreach ($generator->getChildObjectsById($id) as $childId=>$childObject) {
+		foreach ($nodeGenerator->getChildObjectsById($nodeId) as $childId=>$childObject) {
 //			echo __LINE__.' '.$childObject."\n";
-			$childNode = new Node($childObject, $childId, $generator, $height + 1, $this);
+			$childNode = new Node($childObject, $childId, $nodeGenerator, $height + 1, $this);
 
 			$this->children[] = $childNode;
 		}

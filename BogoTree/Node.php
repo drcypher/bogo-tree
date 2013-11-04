@@ -2,14 +2,14 @@
 namespace BogoTree;
 
 /**
- * Description of Node
+ * Tree node.
  *
  * @author Konstantinos Filios <konfilios@gmail.com>
  */
 class Node implements INodeset
 {
 	/**
-	 * Id of node.
+	 * Node id.
 	 *
 	 * @var mixed
 	 */
@@ -23,33 +23,48 @@ class Node implements INodeset
 	protected $object;
 
 	/**
+	 * Parent node.
 	 *
-	 * @var Node
+	 * @var \BogoTree\Node
 	 */
-	protected $parent;
+	protected $parentNode;
 
 	/**
 	 * Child nodes.
 	 *
-	 * @var NodeArray
+	 * @var \BogoTree\NodeArray
 	 */
 	protected $children = null;
 
-	public function __construct($object, $id)
+	/**
+	 * Wrap given object in a node with given id.
+	 *
+	 * @param mixed $object
+	 * @param mixed $nodeId
+	 */
+	public function __construct($object, $nodeId)
 	{
 		$this->i = 0;
-		$this->id = $id;
+		$this->id = $nodeId;
 		$this->object = $object;
 		$this->children = new NodeArray();
 	}
 
-	private $i;
-
+	/**
+	 * Node id.
+	 *
+	 * @return mixed
+	 */
 	public function getId()
 	{
 		return $this->id;
 	}
 
+	/**
+	 * Object wrapped in node.
+	 *
+	 * @return mixed
+	 */
 	public function getObject()
 	{
 		return $this->object;
@@ -78,12 +93,19 @@ class Node implements INodeset
 	/**
 	 * Child nodes.
 	 *
-	 * @return NodeArray
+	 * @return \BogoTree\NodeArray
 	 */
 	public function getChildren()
 	{
 		return $this->children;
 	}
+
+	/**
+	 * Pseudo-counter for iterations.
+	 *
+	 * @var integer
+	 */
+	private $i;
 
 	public function current()
 	{
